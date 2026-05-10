@@ -15,7 +15,7 @@ numpy==1.26.4
 ## Introduction
 
 - ``src``: Python scripts of the DyMRL model.
-- ``results``: Model files that replicate the reported results in our paper.
+- ``results``: Folder to be created to store model files.
 - ``pretrain``: Auxiliary linguistic and visual modality feature matrices of multimodal temporal KGs.
 
 
