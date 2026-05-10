@@ -169,7 +169,7 @@ class DyMRL(AdaptiveCurvatureDistance):
             if args.s_hp < 0:
                 if args.s_delta_ind:
                     self.delta_l = nn.Parameter(torch.zeros(self.sizes[0], 1), requires_grad=True)
-                    self.delta_r = nn.Parameter(torch.zeros(self.sizes[0], 1), requires_grad=True)
+                    self.delta_r = nn.Parameter(torch.zeros(self.sizes[1], 1), requires_grad=True)
                 else:
                     self.delta = nn.Parameter(torch.zeros(self.sizes[0], 1), requires_grad=True)
             self.score_comb = operations[args.s_comb]
@@ -246,10 +246,10 @@ class DyMRL(AdaptiveCurvatureDistance):
         if self.s_hp[0] < 0:
             if self.s_delta_ind:
                 w1 = self.delta_l[queries[:, 0]]
-                w2 = self.delta_r[queries[:, 2]]
+                w2 = self.delta_r[queries[:, 1]]
             else:
                 w1 = self.delta[queries[:, 0]]
-                w2 = self.delta[queries[:, 2]]
+                w2 = self.delta[queries[:, 1]]
             if act:
                 w1 = act(w1)
                 w2 = act(w2)
